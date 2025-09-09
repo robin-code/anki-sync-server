@@ -62,7 +62,7 @@ jobs:
           # list of Docker images to use as base name for tags
           images: |
             ${{ secrets.DOCKER_USERNAME }}/anki-sync-server
-            ghcr.io/${{ github.repository_owner }}/anki-sync-server
+            #ghcr.io/${{ github.repository_owner }}/anki-sync-server
           tags: |
             type=ref,event=tag
             type=raw,value=${{ needs.get-latest-tag.outputs.tag }}
@@ -88,4 +88,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm64
+         # platforms: linux/amd64,linux/arm64
